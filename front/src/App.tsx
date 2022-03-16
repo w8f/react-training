@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RouterSample from "./component/RouterSample";
+import UseStateSample from "./component/useState/UseStateSample";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/sample" element={<RouterSample />} />
+            <Route path="/useStateSample" element={<UseStateSample />} />
           </Routes>
         </div>
       </Router>
