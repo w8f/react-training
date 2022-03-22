@@ -6,6 +6,8 @@ import UseRefSample from "./component/useRef/UseRefSample";
 import UseContextSample from "./component/useContext/UseContextSample";
 import UseContextSampleWithState from "./component/useContext/UseContextSampleWithState";
 import UseContextSampleWithCustomHook from "./component/useContext/UseContextSampleWithCustomHook";
+import UseReducerSample from "./component/useReducer/UseReducerSample";
+
 function App() {
   return (
     <div className="App">
@@ -18,13 +20,14 @@ function App() {
             <Route path="/useRefSample" element={<UseRefSample />} />
             <Route path="/UseContextSample" element={<UseContextSample />} />
             <Route
-              path="/UseContextSampleWithState"
+              path="/useContextSampleWithState"
               element={<UseContextSampleWithState />}
             />
             <Route
-              path="/UseContextSampleWithCustomHook"
+              path="/useContextSampleWithCustomHook"
               element={<UseContextSampleWithCustomHook />}
             />
+            <Route path="/useReducerSample" element={<UseReducerSample />} />
           </Routes>
         </div>
       </Router>
