@@ -15,6 +15,7 @@ function App() {
       <Router>
         <div>
           <Routes>
+            <Route path="/" element={<UseStateSample />} />
             <Route path="/sample" element={<RouterSample />} />
             <Route path="/useStateSample" element={<UseStateSample />} />
             <Route path="/useEffectSample" element={<UseEffectSample />} />
