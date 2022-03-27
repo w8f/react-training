@@ -1,11 +1,17 @@
 import { VFC, useState, useEffect } from "react";
 
-type Photo = {
+export type Photo = {
   albumId: number;
   id: number;
   title: string;
   url: string;
   thumbnailUrl: string;
+};
+
+export const fetchPhoto = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/Photos");
+  const photos = (await res.json()) as Photo[];
+  return photos;
 };
 
 const UseEffectSample: VFC = () => {
@@ -15,12 +21,7 @@ const UseEffectSample: VFC = () => {
 
   /** effect */
   useEffect(() => {
-    const fetchPhoto = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/Photos");
-      const ps = (await res.json()) as Photo[];
-      setPhotos(ps);
-    };
-    fetchPhoto();
+    fetchPhoto().then((photos) => setPhotos(photos));
   }, []);
 
   return (
