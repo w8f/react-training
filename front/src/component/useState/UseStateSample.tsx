@@ -1,11 +1,15 @@
 import { VFC, useState } from "react";
 
+type Todo = {
+  text: string;
+};
+
 const UseStateSample: VFC = () => {
   /** state */
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([{ text: "Learn hooks" }]);
+  const [todos, setTodos] = useState<Todo[]>([{ text: "Learn hooks" }]);
 
   return (
     <div>
