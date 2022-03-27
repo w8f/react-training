@@ -29,5 +29,3 @@ test("using mock return values", () => {
   console.log(filterTestFn.mock.calls[0][0]); // 11
   console.log(filterTestFn.mock.calls[1][0]); // 12
 });
-
-// test("using mock module", () => {});
