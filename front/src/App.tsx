@@ -9,6 +9,7 @@ import UseContextSampleWithCustomHook from "./component/useContext/UseContextSam
 import UseReducerSample from "./component/useReducer/UseReducerSample";
 import MemorizationSample from "./component/memorization/MemorizationSample";
 import AutomaticBatchingSample from "./component/v18/AutomaticBatchingSample";
+import UseStateSample2 from "./component/useState/UseStateSample2";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<UseStateSample />} />
             <Route path="/sample" element={<RouterSample />} />
             <Route path="/useStateSample" element={<UseStateSample />} />
+            <Route path="/useStateSample2" element={<UseStateSample2 />} />
             <Route path="/useEffectSample" element={<UseEffectSample />} />
             <Route path="/useRefSample" element={<UseRefSample />} />
             <Route path="/UseContextSample" element={<UseContextSample />} />
