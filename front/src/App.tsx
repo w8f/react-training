@@ -11,6 +11,8 @@ import MemorizationSample from "./component/memorization/MemorizationSample";
 import AutomaticBatchingSample from "./component/v18/AutomaticBatchingSample";
 import TransitionSample from "./component/v18/TransitionSample";
 import UseStateSample2 from "./component/useState/UseStateSample2";
+import SuspenseSample from "./component/v18/suspense/SuspenseSample";
+import SuspenseSample2 from "./component/v18/suspense/SuspenseSample2";
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
               element={<AutomaticBatchingSample />}
             />
             <Route path="/transitionSample" element={<TransitionSample />} />
+            <Route path="/suspenseSample" element={<SuspenseSample />} />
+            <Route path="/suspenseSample2" element={<SuspenseSample2 />} />
           </Routes>
         </div>
       </Router>
