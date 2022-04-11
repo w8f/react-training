@@ -104,7 +104,7 @@ const UseReducerSample2: VFC = () => {
   const { users, dispatch } = useSample();
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>useReducer sample2</h1>
+      <h1 className="text-3xl font-bold underline">useReducer sample2</h1>
       <hr />
       <div>
         <table style={{ marginLeft: "auto", marginRight: "auto", border: "1" }}>
