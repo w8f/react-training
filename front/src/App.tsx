@@ -14,6 +14,7 @@ import TransitionSample from "./component/v18/TransitionSample";
 import UseStateSample2 from "./component/useState/UseStateSample2";
 import SuspenseSample from "./component/v18/suspense/SuspenseSample";
 import SuspenseSample2 from "./component/v18/suspense/SuspenseSample2";
+import UseIdSample from "./component/v18/useId/UseIdSample";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="/transitionSample" element={<TransitionSample />} />
             <Route path="/suspenseSample" element={<SuspenseSample />} />
             <Route path="/suspenseSample2" element={<SuspenseSample2 />} />
+            <Route path="/useIdSample" element={<UseIdSample />} />
           </Routes>
         </div>
       </Router>
