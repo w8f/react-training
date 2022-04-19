@@ -1,0 +1,105 @@
+import { VFC, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+type RouterType = {
+  path: string;
+  element: React.LazyExoticComponent<VFC<{}>>;
+  role: string[];
+  children?: any[];
+};
+
+export const routes = [
+  {
+    path: "/",
+    role: [],
+    element: lazy(() => import("../component/useState/UseStateSample")),
+    // children: [
+    //   {
+    //     path: "/child",
+    //     element: lazy(() => import("../pages/Child")),
+    //   },
+    // ],
+  },
+  {
+    path: "/useStateSample",
+    role: [],
+    element: lazy(() => import("../component/useState/UseStateSample")),
+  },
+  {
+    path: "/useStateSample2",
+    role: [],
+    element: lazy(() => import("../component/useState/UseStateSample2")),
+  },
+  {
+    path: "/useStateSample3",
+    role: [],
+    element: lazy(() => import("../component/useState/UseStateSample3")),
+  },
+  {
+    path: "/useEffectSample",
+    role: [],
+    element: lazy(() => import("../component/useEffect/UseEffectSample")),
+  },
+  {
+    path: "/useRefSample",
+    role: [],
+    element: lazy(() => import("../component/useRef/UseRefSample")),
+  },
+  {
+    path: "/useContextSample",
+    role: [],
+    element: lazy(() => import("../component/useContext/UseContextSample")),
+  },
+  {
+    path: "/useContextSampleWithState",
+    role: [],
+    element: lazy(
+      () => import("../component/useContext/UseContextSampleWithState")
+    ),
+  },
+  {
+    path: "/useContextSampleWithCustomHook",
+    role: [],
+    element: lazy(
+      () => import("../component/useContext/UseContextSampleWithCustomHook")
+    ),
+  },
+  {
+    path: "/useReducerSample",
+    role: [],
+    element: lazy(() => import("../component/useReducer/UseReducerSample")),
+  },
+  {
+    path: "/useReducerSample2",
+    role: [],
+    element: lazy(() => import("../component/useReducer/UseReducerSample2")),
+  },
+  {
+    path: "/memorizationSample",
+    role: [],
+    element: lazy(() => import("../component/memorization/MemorizationSample")),
+  },
+];
+
+/**
+ * Router
+ * ルーティング定義のために配列でデータ管理をする
+ * @see https://blog.microcms.io/react-best-practices-part3/
+ */
+const Router: VFC = () => {
+  const createRoute = ({ element, role, children, ...route }: RouterType) => {
+    const Component = element;
+    return (
+      <Route key={route.path} {...route} element={<Component />}>
+        {children && children.map(createRoute)}
+      </Route>
+    );
+  };
+  return (
+    <BrowserRouter>
+      <Routes>{routes.map(createRoute)}</Routes>
+    </BrowserRouter>
+  );
+};
+
+export default Router;

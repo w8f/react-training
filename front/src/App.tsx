@@ -1,61 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RouterSample from "./component/RouterSample";
-import UseStateSample from "./component/useState/UseStateSample";
-import UseEffectSample from "./component/useEffect/UseEffectSample";
-import UseRefSample from "./component/useRef/UseRefSample";
-import UseContextSample from "./component/useContext/UseContextSample";
-import UseContextSampleWithState from "./component/useContext/UseContextSampleWithState";
-import UseContextSampleWithCustomHook from "./component/useContext/UseContextSampleWithCustomHook";
-import UseReducerSample from "./component/useReducer/UseReducerSample";
-import UseReducerSample2 from "./component/useReducer/UseReducerSample2";
-import MemorizationSample from "./component/memorization/MemorizationSample";
-import AutomaticBatchingSample from "./component/v18/AutomaticBatchingSample";
-import TransitionSample from "./component/v18/TransitionSample";
-import UseStateSample2 from "./component/useState/UseStateSample2";
-import UseStateSample3 from "./component/useState/UseStateSample3";
-import SuspenseSample from "./component/v18/suspense/SuspenseSample";
-import SuspenseSample2 from "./component/v18/suspense/SuspenseSample2";
-import UseIdSample from "./component/v18/useId/UseIdSample";
+import Router from "./component/Router";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <div>
-          <Routes>
-            <Route path="/" element={<UseStateSample />} />
-            <Route path="/sample" element={<RouterSample />} />
-            <Route path="/useStateSample" element={<UseStateSample />} />
-            <Route path="/useStateSample2" element={<UseStateSample2 />} />
-            <Route path="/useStateSample3" element={<UseStateSample3 />} />
-            <Route path="/useEffectSample" element={<UseEffectSample />} />
-            <Route path="/useRefSample" element={<UseRefSample />} />
-            <Route path="/UseContextSample" element={<UseContextSample />} />
-            <Route
-              path="/useContextSampleWithState"
-              element={<UseContextSampleWithState />}
-            />
-            <Route
-              path="/useContextSampleWithCustomHook"
-              element={<UseContextSampleWithCustomHook />}
-            />
-            <Route path="/useReducerSample" element={<UseReducerSample />} />
-            <Route path="/useReducerSample2" element={<UseReducerSample2 />} />
-            <Route
-              path="/memorizationSample"
-              element={<MemorizationSample />}
-            />
-            <Route
-              path="/automaticBatchingSample"
-              element={<AutomaticBatchingSample />}
-            />
-            <Route path="/transitionSample" element={<TransitionSample />} />
-            <Route path="/suspenseSample" element={<SuspenseSample />} />
-            <Route path="/suspenseSample2" element={<SuspenseSample2 />} />
-            <Route path="/useIdSample" element={<UseIdSample />} />
-          </Routes>
-        </div>
-      </Router>
+      <Router />
     </div>
   );
 }
