@@ -53,6 +53,7 @@ const UseStateSample3: FC = () => {
             ></input>
           </div>
         </form>
+        <p>{JSON.stringify(formData)}</p>
       </div>
     </div>
   );
