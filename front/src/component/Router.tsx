@@ -12,7 +12,7 @@ export const routes = [
   {
     path: "/",
     role: [],
-    element: lazy(() => import("../component/useState/UseStateSample")),
+    element: lazy(() => import("../component/Top")),
     // children: [
     //   {
     //     path: "/child",
@@ -78,6 +78,31 @@ export const routes = [
     path: "/memorizationSample",
     role: [],
     element: lazy(() => import("../component/memorization/MemorizationSample")),
+  },
+  {
+    path: "/suspenseSample",
+    role: [],
+    element: lazy(() => import("../component/v18/suspense/SuspenseSample")),
+  },
+  {
+    path: "/suspenseSample2",
+    role: [],
+    element: lazy(() => import("../component/v18/suspense/SuspenseSample2")),
+  },
+  {
+    path: "/useIdSample",
+    role: [],
+    element: lazy(() => import("../component/v18/useId/UseIdSample")),
+  },
+  {
+    path: "/automaticBatchingSample",
+    role: [],
+    element: lazy(() => import("../component/v18/AutomaticBatchingSample")),
+  },
+  {
+    path: "/transitionSample",
+    role: [],
+    element: lazy(() => import("../component/v18/TransitionSample")),
   },
 ];
 
