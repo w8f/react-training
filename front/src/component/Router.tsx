@@ -1,9 +1,9 @@
-import { VFC, lazy } from "react";
+import { FC, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 type RouterType = {
   path: string;
-  element: React.LazyExoticComponent<VFC<{}>>;
+  element: React.LazyExoticComponent<FC<{}>>;
   role: string[];
   children?: any[];
 };
@@ -111,7 +111,7 @@ export const routes = [
  * ルーティング定義のために配列でデータ管理をする
  * @see https://blog.microcms.io/react-best-practices-part3/
  */
-const Router: VFC = () => {
+const Router: FC = () => {
   const createRoute = ({ element, role, children, ...route }: RouterType) => {
     const Component = element;
     return (

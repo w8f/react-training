@@ -1,10 +1,10 @@
-import { VFC, useState } from "react";
+import { FC, useState } from "react";
 
 type Todo = {
   text: string;
 };
 
-const UseStateSample: VFC = () => {
+const UseStateSample: FC = () => {
   /** state */
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");

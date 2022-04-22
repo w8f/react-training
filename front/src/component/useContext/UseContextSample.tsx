@@ -1,9 +1,9 @@
-import { VFC, createContext, useContext } from "react";
+import { FC, createContext, useContext } from "react";
 
 // Contextを作成する。
 export const UserCount = createContext(0);
 
-export const UseContextSample: VFC = () => {
+export const UseContextSample: FC = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>useContext sample</h1>
@@ -16,7 +16,7 @@ export const UseContextSample: VFC = () => {
   );
 };
 
-const ComponentA: VFC = () => {
+const ComponentA: FC = () => {
   return (
     <>
       <p>Component A</p>
@@ -25,7 +25,7 @@ const ComponentA: VFC = () => {
   );
 };
 
-const ComponentB: VFC = () => {
+const ComponentB: FC = () => {
   return (
     <>
       <p>Component B</p>
@@ -34,7 +34,7 @@ const ComponentB: VFC = () => {
   );
 };
 
-const ComponentC: VFC = () => {
+const ComponentC: FC = () => {
   const count = useContext(UserCount);
   return (
     <>

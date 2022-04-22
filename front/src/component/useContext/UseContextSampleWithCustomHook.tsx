@@ -1,10 +1,10 @@
-import { VFC } from "react";
+import { FC } from "react";
 import {
   CountProvider,
   useCountContext,
 } from "../useContext/context/useContext";
 
-export const UseContextSample: VFC = () => {
+export const UseContextSample: FC = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>useContext sample</h1>
@@ -17,7 +17,7 @@ export const UseContextSample: VFC = () => {
   );
 };
 
-const ComponentA: VFC = () => {
+const ComponentA: FC = () => {
   const { count } = useCountContext();
   return (
     <>
@@ -28,7 +28,7 @@ const ComponentA: VFC = () => {
   );
 };
 
-const ComponentB: VFC = () => {
+const ComponentB: FC = () => {
   const { count, setCount } = useCountContext();
   return (
     <>
@@ -46,7 +46,7 @@ const ComponentB: VFC = () => {
   );
 };
 
-const ComponentC: VFC = () => {
+const ComponentC: FC = () => {
   const { countDown } = useCountContext();
   return (
     <>

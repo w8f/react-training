@@ -1,4 +1,4 @@
-import { VFC, useState, useEffect } from "react";
+import { FC, useState, useEffect } from "react";
 
 export type Photo = {
   albumId: number;
@@ -14,7 +14,7 @@ export const fetchPhoto = async () => {
   return photos;
 };
 
-const UseEffectSample: VFC = () => {
+const UseEffectSample: FC = () => {
   /** state */
   const [count, setCount] = useState(0);
   const [Photos, setPhotos] = useState<Photo[]>([]);

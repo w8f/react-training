@@ -1,4 +1,4 @@
-import { VFC, Suspense, useState, useMemo } from "react";
+import { FC, Suspense, useState, useMemo } from "react";
 
 type Props = {
   name: string;
@@ -10,19 +10,19 @@ const sleep = (ms: number) => {
   });
 };
 
-const SometimesSuspend: VFC = () => {
+const SometimesSuspend: FC = () => {
   if (Math.random() < 0.5) {
     throw sleep(1000);
   }
   return <p>hello world</p>;
 };
 
-const RenderingNotifier: VFC<Props> = ({ name }) => {
+const RenderingNotifier: FC<Props> = ({ name }) => {
   console.log(`${name} was rendered`);
   return null;
 };
 
-const DataLoader: VFC = () => {
+const DataLoader: FC = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<string | null>(null);
   // loading is trueは2回表示される。
@@ -62,7 +62,7 @@ const fetchData = async () => {
   return `Hello, ${(Math.random() * 1000).toFixed(0)}`;
 };
 
-const SuspenseSample: VFC = () => {
+const SuspenseSample: FC = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>suspense sample</h1>

@@ -87,12 +87,12 @@ startTransition の処理が完了し、画面が再レンダリングされて�
 ⇔ ユーザーは更新をレンダリングしている間、現在のコンテンツとのインタラクションを継続することができます。
 
 ```js
-import { VFC, useTransition, useState } from "react";
+import { FC, useTransition, useState } from "react";
 
 /**
  * useTransitionサンプル
  */
-const TransitionSample: VFC = () => {
+const TransitionSample: FC = () => {
   const [isPending, startTransition] = useTransition();
   const [count, setCount] = useState(0);
   const handleClick = () => {

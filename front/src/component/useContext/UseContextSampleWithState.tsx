@@ -1,4 +1,4 @@
-import { VFC, createContext, useContext, useState } from "react";
+import { FC, createContext, useContext, useState } from "react";
 
 // Contextを作成する。
 export const UserCountContext = createContext(
@@ -8,7 +8,7 @@ export const UserCountContext = createContext(
   }
 );
 
-export const UseContextSample: VFC = () => {
+export const UseContextSample: FC = () => {
   const [count, setCount] = useState(100);
   const value = {
     count,
@@ -27,7 +27,7 @@ export const UseContextSample: VFC = () => {
   );
 };
 
-const ComponentA: VFC = () => {
+const ComponentA: FC = () => {
   return (
     <>
       <p>Component A</p>
@@ -36,7 +36,7 @@ const ComponentA: VFC = () => {
   );
 };
 
-const ComponentB: VFC = () => {
+const ComponentB: FC = () => {
   return (
     <>
       <p>Component B</p>
@@ -45,7 +45,7 @@ const ComponentB: VFC = () => {
   );
 };
 
-const ComponentC: VFC = () => {
+const ComponentC: FC = () => {
   const { count, setCount } = useContext(UserCountContext);
   return (
     <>

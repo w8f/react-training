@@ -1,6 +1,6 @@
-import { VFC, useRef } from "react";
+import { FC, useRef } from "react";
 
-const UseRefSample: VFC = () => {
+const UseRefSample: FC = () => {
   /** ref */
   // nullを指定することで、readonlyになる（=currentは書き換えられない）
   const inputRef = useRef<HTMLInputElement>(null);

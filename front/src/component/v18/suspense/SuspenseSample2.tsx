@@ -1,4 +1,4 @@
-import { VFC, Suspense } from "react";
+import { FC, Suspense } from "react";
 
 const dataMap: Map<string, unknown> = new Map();
 
@@ -23,12 +23,12 @@ const useData = <T,>(cacheKey: string, fetch: () => Promise<T>): T => {
   return cachedData;
 };
 
-export const DataLoader: VFC = () => {
+export const DataLoader: FC = () => {
   const data = useData("Dataloader1", fetchData);
   return <div>Data is {data}</div>;
 };
 
-const DataLoader2: React.VFC = () => {
+const DataLoader2: React.FC = () => {
   const data = useData("DataLoader2", fetchData);
   return (
     <div>
@@ -36,7 +36,7 @@ const DataLoader2: React.VFC = () => {
     </div>
   );
 };
-const SuspenseSample2: VFC = () => {
+const SuspenseSample2: FC = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>suspense sample 2</h1>

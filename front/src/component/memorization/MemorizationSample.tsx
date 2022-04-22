@@ -1,4 +1,4 @@
-import React, { VFC, useState, useCallback, memo, useMemo } from "react";
+import React, { FC, useState, useCallback, memo, useMemo } from "react";
 
 type ButtonProps = {
   handleClick: () => void;
@@ -30,7 +30,7 @@ const Title = React.memo(() => {
   return <h1>UseCallback Sample</h1>;
 });
 
-const MemorizationSample: VFC = () => {
+const MemorizationSample: FC = () => {
   const [firstCountState, setFirstCount] = useState(0);
   const [secondCountState, setSecondCount] = useState(10);
   const [thirdCountState, setThirdCount] = useState(0);

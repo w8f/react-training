@@ -1,4 +1,4 @@
-import { VFC, useReducer } from "react";
+import { FC, useReducer } from "react";
 
 type State = {
   count: number;
@@ -8,7 +8,7 @@ type ActionType = {
   type: "increment" | "decrement";
 };
 
-const UseReducerSample: VFC = () => {
+const UseReducerSample: FC = () => {
   const initialState = { count: 0 };
 
   // reducer関数を定義する。

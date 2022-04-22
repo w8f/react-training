@@ -1,4 +1,4 @@
-import { VFC, useEffect, useReducer } from "react";
+import { FC, useEffect, useReducer } from "react";
 import Users, { User } from "../../logic/Users";
 
 type Action =
@@ -100,7 +100,7 @@ const useSample = () => {
  * useReducer sample2
  * 配列の更新
  */
-const UseReducerSample2: VFC = () => {
+const UseReducerSample2: FC = () => {
   const { users, dispatch } = useSample();
   return (
     <div style={{ textAlign: "center" }}>

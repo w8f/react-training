@@ -1,7 +1,7 @@
-import { VFC } from "react";
+import { FC } from "react";
 import useSample2 from "./uss2";
 
-const UseStateSample2: VFC = () => {
+const UseStateSample2: FC = () => {
   const { members, onClickBtn, onClickCheckbox } = useSample2();
 
   return (
