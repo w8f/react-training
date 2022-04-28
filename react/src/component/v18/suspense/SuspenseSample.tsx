@@ -10,12 +10,12 @@ const sleep = (ms: number) => {
   });
 };
 
-const SometimesSuspend: FC = () => {
-  if (Math.random() < 0.5) {
-    throw sleep(1000);
-  }
-  return <p>hello world</p>;
-};
+// const SometimesSuspend: FC = () => {
+//   if (Math.random() < 0.5) {
+//     throw sleep(1000);
+//   }
+//   return <p>hello world</p>;
+// };
 
 const RenderingNotifier: FC<Props> = ({ name }) => {
   console.log(`${name} was rendered`);
@@ -29,6 +29,7 @@ const DataLoader: FC = () => {
   // 再レンダリングでサスペンドした場合、
   // 再レンダリング最中にコンポーネントの記憶領域に書き込まれたものは失われる。
   //（メモ化した内容が捨てられる）
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _ = useMemo(() => {
     if (loading) {
       console.log("loading is true");

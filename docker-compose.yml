@@ -1,13 +1,13 @@
 version: "3.8"
 services:
-  front:
+  react:
     build:
       context: ./
-      dockerfile: ./docker/front/Dockerfile
+      dockerfile: ./docker/react/Dockerfile
     command: sh -c 'npm run start'
     ports:
       - "3000:3000"
     tty: true
     volumes:
-      - "./front:/front"
-    working_dir: /front
+      - "./react:/react"
+    working_dir: /react
