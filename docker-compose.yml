@@ -11,3 +11,14 @@ services:
     volumes:
       - "./react:/react"
     working_dir: /react
+  next:
+    build:
+      context: ./
+      dockerfile: ./docker/next/Dockerfile
+    command: sh -c 'npm run dev'
+    ports:
+      - "3001:3001"
+    tty: true
+    volumes:
+      - "./next:/next"
+    working_dir: /next
