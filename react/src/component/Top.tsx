@@ -8,6 +8,7 @@ const Top: FC = () => {
         Welcome, Let's React Training
       </h1>
       <p>this is a react training repository.</p>
+      <a href="http://localhost:3001/">switch next.js training pages</a>
       <div className="m-8">
         {routes.map(({ path }) => (
           <a className="block text-lg" key={path} href={path}>

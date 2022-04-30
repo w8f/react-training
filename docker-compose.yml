@@ -3,7 +3,7 @@ services:
   react:
     build:
       context: ./
-      dockerfile: ./docker/react/Dockerfile
+      dockerfile: ./react/Dockerfile
     command: sh -c 'npm run start'
     ports:
       - "3000:3000"
@@ -14,7 +14,7 @@ services:
   next:
     build:
       context: ./
-      dockerfile: ./docker/next/Dockerfile
+      dockerfile: ./next/Dockerfile
     command: sh -c 'npm run dev'
     ports:
       - "3001:3001"
