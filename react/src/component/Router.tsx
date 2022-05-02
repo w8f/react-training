@@ -104,6 +104,11 @@ export const routes = [
     role: [],
     element: lazy(() => import("../component/v18/TransitionSample")),
   },
+  {
+    path: "/hooksWithJSX",
+    role: [],
+    element: lazy(() => import("../component/hooksWithJSX")),
+  },
 ];
 
 /**
