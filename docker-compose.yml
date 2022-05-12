@@ -22,3 +22,14 @@ services:
     volumes:
       - "./next:/next"
     working_dir: /next
+  typescript:
+    build:
+      context: ./
+      dockerfile: ./typescript/app/Dockerfile
+    command: sh -c 'node'
+    ports:
+      - "3002:3002"
+    tty: true
+    volumes:
+      - "./typescript/app:/usr/src/app"
+    working_dir: /usr/src/app
