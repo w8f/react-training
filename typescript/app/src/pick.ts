@@ -36,6 +36,14 @@ type MyPick<T, K extends keyof T> = {
   [key in K]: T[key];
 };
 
+/**
+ * keyof型演算子
+ * keyofはオブジェクト型からプロパティ名を型として返す型演算子
+ * > type TodoKey = "title" | "description" | "completed"
+ * @see https://typescriptbook.jp/reference/type-reuse/keyof-type-operator
+ */
+type TodoKey = keyof Todo;
+
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
 
