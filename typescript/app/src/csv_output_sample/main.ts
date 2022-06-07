@@ -9,18 +9,7 @@ const path = require("path");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const outputDir = path.join(__dirname, "data");
 const { now } = require("./date");
-
-const columns = ["id", "name", "username", "email", "phone", "website"];
-const csvWriter = createCsvWriter({
-  path: `${outputDir}/output_${now()}.csv`,
-  header: columns.map((column) => {
-    return {
-      id: column,
-      title: column.toUpperCase(),
-    };
-  }),
-  alwaysQuote: true,
-});
+const { flatten } = require("./flatten");
 
 /**
  * ファイルを削除
@@ -38,6 +27,20 @@ const removeFile = (file: string) => {
 const main = async () => {
   const res = await axios.get("https://jsonplaceholder.typicode.com/users");
   const users = res.data;
+  const input = flatten(users);
+
+  const columns = Object.keys(input[0]);
+  const csvWriter = createCsvWriter({
+    path: `${outputDir}/output_${now()}.csv`,
+    header: columns.map((column) => {
+      return {
+        id: column,
+        title: column.toUpperCase(),
+      };
+    }),
+    alwaysQuote: true,
+  });
+
   try {
     const isCsv = new RegExp(/.*\.csv$/);
     fs.readdir(
@@ -62,7 +65,7 @@ const main = async () => {
     );
     // csv 出力
     csvWriter
-      .writeRecords(users)
+      .writeRecords(input)
       .then(() => {
         console.log("done");
       })
