@@ -109,6 +109,11 @@ export const routes = [
     role: [],
     element: lazy(() => import("../component/hooksWithJSX")),
   },
+  {
+    path: "/debuggerSample",
+    role: [],
+    element: lazy(() => import("../component/debugger/index")),
+  },
 ];
 
 /**
