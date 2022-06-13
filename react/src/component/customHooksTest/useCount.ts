@@ -11,5 +11,9 @@ export const useCount = (initialValue = 0) => {
     setCount((prev) => prev - 1);
   }, []);
 
-  return { count, increment, decrement };
+  const reset = useCallback(() => {
+    setCount(initialValue);
+  }, [initialValue]);
+
+  return { count, increment, decrement, reset };
 };
