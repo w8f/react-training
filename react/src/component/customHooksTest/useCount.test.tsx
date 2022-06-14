@@ -1,5 +1,5 @@
 import { renderHook, act } from "@testing-library/react-hooks";
-import { useCount } from "./useCount";
+import { useCount, CounterStepProvider } from "./useCount";
 
 describe("useCountフックのテスト", () => {
   test("should use counter", () => {
@@ -74,6 +74,58 @@ describe("useCountフックのテスト", () => {
 
     act(() => {
       result.current.reset();
+    });
+
+    expect(result.current.count).toBe(10);
+  });
+
+  test("should use custom step when incrementing", () => {
+    const wrapper = ({ children }: { children: JSX.Element }) => (
+      <CounterStepProvider step={2}>{children}</CounterStepProvider>
+    );
+    /**
+     * renderHookのwrapperオプションは、レンダリング時にテストコンポーネントをラップするための React コンポーネントです。
+     * これは通常、フックが useContext でアクセスするために
+     * React.createContext からコンテキストプロバイダを追加するために使用されます。
+     *
+     * 要はuseContextを利用したhookの場合、wrapperオプションを利用する。
+     */
+    const { result } = renderHook(() => useCount(), { wrapper });
+
+    act(() => {
+      result.current.increment();
+    });
+
+    expect(result.current.count).toBe(2);
+  });
+
+  test("should use custom step when incrementing2", () => {
+    const wrapper = ({
+      step,
+      children,
+    }: {
+      step: number;
+      children: JSX.Element;
+    }) => <CounterStepProvider step={step}>{children}</CounterStepProvider>;
+
+    const { result, rerender } = renderHook(() => useCount(), {
+      wrapper,
+      initialProps: {
+        step: 2,
+        children: <></>,
+      },
+    });
+
+    act(() => {
+      result.current.increment();
+    });
+
+    expect(result.current.count).toBe(2);
+
+    rerender({ step: 8, children: <></> });
+
+    act(() => {
+      result.current.increment();
     });
 
     expect(result.current.count).toBe(10);
