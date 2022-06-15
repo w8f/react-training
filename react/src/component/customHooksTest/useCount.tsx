@@ -36,5 +36,13 @@ export const useCount = (initialValue = 0) => {
     setCount(initialValue);
   }, [initialValue]);
 
-  return { count, increment, decrement, reset };
+  const incrementAsync = useCallback(() => {
+    setTimeout(() => increment(), 1000);
+  }, [increment]);
+
+  if (count > 9000) {
+    throw new Error("It's over 9000!");
+  }
+
+  return { count, increment, incrementAsync, decrement, reset };
 };

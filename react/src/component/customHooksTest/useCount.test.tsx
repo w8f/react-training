@@ -31,13 +31,13 @@ describe("useCountフックのテスト", () => {
   });
 
   test("should increment count from custom initial value", () => {
-    const { result } = renderHook(() => useCount(9000));
+    const { result } = renderHook(() => useCount(3000));
 
     act(() => {
       result.current.increment();
     });
 
-    expect(result.current.count).toBe(9001);
+    expect(result.current.count).toBe(3001);
   });
 
   /**
@@ -129,5 +129,30 @@ describe("useCountフックのテスト", () => {
     });
 
     expect(result.current.count).toBe(10);
+  });
+
+  test("should increment count after delay", async () => {
+    const { result, waitForNextUpdate } = renderHook(() => useCount());
+
+    // 状態の更新は await waitForNextUpdate() の間に非同期に行われるので、
+    // act() で incrementAsync をラップする必要はない。
+    result.current.incrementAsync();
+
+    // test対象の関数が非同期の場合、waitForNextUpdateを利用することで、
+    // 関数の実行が完了するまで、後続処理を待ってくれる
+    await waitForNextUpdate();
+
+    expect(result.current.count).toBe(1);
+  });
+
+  test("should throw error when over 9000", () => {
+    const { result } = renderHook(() => useCount(9000));
+
+    act(() => {
+      result.current.increment();
+    });
+
+    // errorがthrowされることを確認する
+    expect(result.error).toEqual(Error("It's over 9000!"));
   });
 });
