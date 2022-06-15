@@ -1,4 +1,4 @@
-FROM node:17-alpine3.13
+FROM node:18-slim
 
 ENV TZ Asia/Tokyo
 
