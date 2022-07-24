@@ -119,6 +119,11 @@ export const routes = [
     role: [],
     element: lazy(() => import("../component/customHooksTest/index")),
   },
+  {
+    path: "/gridLayout",
+    role: [],
+    element: lazy(() => import("./cssPlayground/gridLayout")),
+  },
 ];
 
 /**
