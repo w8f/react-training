@@ -124,6 +124,11 @@ export const routes = [
     role: [],
     element: lazy(() => import("./cssPlayground/gridLayout")),
   },
+  {
+    path: "/recoil1",
+    role: [],
+    element: lazy(() => import("./recoil/tutorial1")),
+  },
 ];
 
 /**
